@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat
+  namespace: default
+  labels:
+    app: mytomcat
+    env: dev
+spec:
+  containers:
+  - name:  tomcat
+    ports:
+    - containerPort: 8080
+    image: registry.cn-chengdu.aliyuncs.com/qzcsbj/tomcat:9.0.13
+    imagePullPolicy: IfNotPresent
